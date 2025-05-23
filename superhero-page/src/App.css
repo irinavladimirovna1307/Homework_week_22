@@ -1,42 +1,57 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+.title {
+  text-transform: uppercase;
+  padding: 1vh;
+  color: rgb(240, 235, 230);
+  height: 8vh;
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.main {
+  color: #8a0f69;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.catalogue {
+  width: 90vw;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(25vw, 1fr));
+  gap: 1vw;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.hero {
+  border: 2px solid transparent;
+  width: 29vw;
+  padding: 0 1vw 1vh 1vw;
+  margin: 1vh auto;
+  border-radius: 20px;
+  background: linear-gradient(rgb(1, 2, 9), rgb(1, 2, 9)) padding-box,
+    linear-gradient(to right, rgb(60, 41, 69), rgb(240, 235, 230)) border-box;
 }
 
-.card {
-  padding: 2em;
+.image {
+  margin: 2vw auto 0 auto;
+  width: 23vw;
+  border-radius: 1rem;
+  flex-shrink: 0;
 }
 
-.read-the-docs {
-  color: #888;
+.description {
+  height: 18vh;
+}
+
+.text {
+  width: 25vw;
+}
+
+.star {
+  font-size: 3rem;
+  cursor: pointer;
+  color: rgba(201, 200, 199, 0.5);
+}
+
+.star.rated {
+  color: #8a0f69;
+}
+
+.star.hovered {
+  color: rgba(138, 15, 105, 0.7);
 }

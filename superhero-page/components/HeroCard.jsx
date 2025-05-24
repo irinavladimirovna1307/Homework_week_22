@@ -1,8 +1,11 @@
 import { useState, useEffect } from "react";
 import "../src/index.css";
 
+const STAR_RATINGS = [1, 2, 3, 4, 5];
+
 export default function HeroCard({ hero }) {
   const [rating, setRating] = useState(0);
+  const [isExpanded, setIsExpanded] = useState(false);
 
   useEffect(() => {
     const saved = JSON.parse(localStorage.getItem("rating")) || [];
@@ -27,11 +30,19 @@ export default function HeroCard({ hero }) {
         <div>Род деятельности: {hero.occupation}</div>
         <div>Друзья: {hero.friends}</div>
         <div>Суперсилы: {hero.superpowers}</div>
-        <p>{hero.info}</p>
+        <p className="info-text">
+          {isExpanded ? hero.info : `${hero.info.slice(0, 150)}...`}
+          <button
+            className="toggle-btn"
+            onClick={() => setIsExpanded(!isExpanded)}
+          >
+            {isExpanded ? "Свернуть" : "Подробнее"}
+          </button>
+        </p>
       </div>
       <img className="image" src={hero.url} alt={hero.name} />
       <div className="rank">
-        {[1, 2, 3, 4, 5].map((num) => (
+        {STAR_RATINGS.map((num) => (
           <span
             key={num}
             className={`star ${rating >= num ? "rated" : ""}`}

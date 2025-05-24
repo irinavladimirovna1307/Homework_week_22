@@ -1,8 +1,11 @@
 .title {
   text-transform: uppercase;
-  padding: 1vh;
+  padding: 0.5rem;
   color: rgb(240, 235, 230);
-  height: 8vh;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
 }
 
@@ -11,47 +14,96 @@
 }
 
 .catalogue {
-  width: 90vw;
+  width: 90%;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(25vw, 1fr));
-  gap: 1vw;
+  grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+  gap: 1rem;
+  padding: 1rem 0;
 }
 
 .hero {
   border: 2px solid transparent;
-  width: 29vw;
-  padding: 0 1vw 1vh 1vw;
-  margin: 1vh auto;
-  border-radius: 20px;
+  width: 100%;
+  max-width: 24rem;
+  min-height: 56rem;
+  display: flex;
+  flex-direction: column;
+  padding: 0 1rem 1rem;
+  margin: 0.5rem auto;
+  border-radius: 1.25rem;
   background: linear-gradient(rgb(1, 2, 9), rgb(1, 2, 9)) padding-box,
     linear-gradient(to right, rgb(60, 41, 69), rgb(240, 235, 230)) border-box;
 }
 
 .image {
-  margin: 2vw auto 0 auto;
-  width: 23vw;
+  margin: 1rem auto 0;
+  width: 100%;
+  height: 18rem;
+  object-fit: cover;
+  object-position: top;
+  max-width: 20rem;
   border-radius: 1rem;
   flex-shrink: 0;
 }
 
 .description {
-  height: 18vh;
+  flex-grow: 1;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
-.text {
-  width: 25vw;
+.info-text {
+  min-height: 8rem;
+  overflow: hidden;
+  position: relative;
+  line-height: 1.5;
+  margin-bottom: 2rem;
+}
+
+.toggle-btn {
+  position: absolute;
+  bottom: -1.5rem;
+  left: 0;
+  background: none;
+  border: none;
+  color: #8a0f69;
+  cursor: pointer;
+  padding: 0;
+  font-size: 0.9rem;
+}
+
+.toggle-btn:hover {
+  text-decoration: underline;
+}
+
+.rank {
+  margin-top: auto;
+  padding: 1rem 0;
 }
 
 .star {
-  font-size: 3rem;
+  font-size: 2rem;
   cursor: pointer;
   color: rgba(201, 200, 199, 0.5);
+  transition: color 0.2s;
 }
 
 .star.rated {
   color: #8a0f69;
 }
 
-.star.hovered {
-  color: rgba(138, 15, 105, 0.7);
+@media (max-width: 768px) {
+  .catalogue {
+    grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+  }
+
+  .hero {
+    min-height: 52rem;
+  }
+
+  .image {
+    height: 14rem;
+  }
 }

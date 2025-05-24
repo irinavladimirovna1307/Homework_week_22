@@ -30,15 +30,17 @@ export default function HeroCard({ hero }) {
         <div>Род деятельности: {hero.occupation}</div>
         <div>Друзья: {hero.friends}</div>
         <div>Суперсилы: {hero.superpowers}</div>
-        <p className="info-text">
-          {isExpanded ? hero.info : `${hero.info.slice(0, 150)}...`}
+        <div className="info-container">
+          <p className="info-text">
+            {isExpanded ? hero.info : `${hero.info.slice(0, 150)}...`}
+          </p>
           <button
             className="toggle-btn"
             onClick={() => setIsExpanded(!isExpanded)}
           >
             {isExpanded ? "Свернуть" : "Подробнее"}
           </button>
-        </p>
+        </div>
       </div>
       <img className="image" src={hero.url} alt={hero.name} />
       <div className="rank">

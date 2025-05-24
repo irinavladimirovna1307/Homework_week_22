@@ -22,14 +22,14 @@
   width: 100%;
   max-width: 24rem;
   height: auto;
-  min-height: auto;
   display: flex;
   flex-direction: column;
   padding: 0 1rem 1rem;
   margin: 0.5rem auto;
   border-radius: 1.25rem;
-  border-image: linear-gradient(to right, rgb(60, 41, 69), rgb(240, 235, 230)) 1;
-  background: rgb(1, 2, 9);
+  background: linear-gradient(rgb(1, 2, 9), rgb(1, 2, 9)) padding-box,
+    linear-gradient(to right, rgb(60, 41, 69), rgb(240, 235, 230)) border-box;
+  overflow: hidden;
 }
 
 .image {
@@ -71,6 +71,8 @@
   display: -webkit-box;
   -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
+  line-clamp: 4;
+  box-orient: vertical;
 }
 
 .toggle-btn {
@@ -111,7 +113,12 @@
     grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
   }
 
+  .hero {
+    border-radius: 1rem;
+  }
+
   .image {
     aspect-ratio: 1/1;
+    border-radius: 0.8rem;
   }
 }
